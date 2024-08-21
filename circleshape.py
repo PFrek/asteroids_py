@@ -18,6 +18,7 @@ class CircleShape(pygame.sprite.Sprite):
         return distance < self.radius + other.radius
 
     def draw(self, screen):
+        pygame.draw.circle(screen, "red", self.position, self.radius)
         pass
 
     def update(self, dt):

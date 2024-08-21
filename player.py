@@ -29,6 +29,9 @@ class Player(CircleShape):
         return [a, b, c]
 
     def draw(self, screen):
+        # Show hitbox
+        # super().draw(screen)
+
         pygame.draw.polygon(screen, "white", self.triangle(), 2)
 
     def rotate(self, dt):
