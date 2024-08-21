@@ -1,7 +1,12 @@
 import pygame
 import random
 from circleshape import CircleShape
-from constants import ASTEROID_MIN_RADIUS, ASTEROID_MIN_LUMPNESS, ASTEROID_MAX_LUMPNESS
+from constants import (
+    ASTEROID_MIN_RADIUS,
+    ASTEROID_MIN_LUMPNESS,
+    ASTEROID_MAX_LUMPNESS,
+    SHOW_HITBOX,
+)
 
 
 def lumpify(val):
@@ -17,8 +22,8 @@ class Asteroid(CircleShape):
         self.lump_factors = list(map(lumpify, self.lump_factors))
 
     def draw(self, screen):
-        # Show hitbox
-        # super().draw(screen)
+        if SHOW_HITBOX:
+            super().draw(screen)
 
         vertices = [
             pygame.Vector2(self.position.x, self.position.y - self.radius),
